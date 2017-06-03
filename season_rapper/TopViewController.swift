@@ -16,10 +16,10 @@ class TopViewController: UIViewController {
     }
     
     @IBAction func Button1Tapped(_ sender: Any) {
-        ScreenTransitionManager.shared.goToBattle()
+        ScreenTransitionManager.shared.goToTheme()
     }
     
     @IBAction func Button2Tapped(_ sender: Any) {
-        ScreenTransitionManager.shared.goToBattle()
+        ScreenTransitionManager.shared.goToTheme()
     }
 }

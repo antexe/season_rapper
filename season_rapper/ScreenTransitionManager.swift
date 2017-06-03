@@ -50,6 +50,13 @@ class ScreenTransitionManager {
         show(controller)
     }
     
+    //　テーマ画面に飛ぶ
+    func goToTheme(){
+        let storyboard = UIStoryboard(name: "Theme", bundle: nil)
+        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        show(controller)
+    }
+
     //　バトル画面に飛ぶ
     func goToBattle(){
         let storyboard = UIStoryboard(name: "Battle", bundle: nil)
