@@ -45,8 +45,8 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="time_bar" translatesAutoresizingMaskIntoConstraints="NO" id="0da-ON-1YD">
                                 <rect key="frame" x="21" y="565" width="333" height="28"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mza-1t-Pu5">
-                                <rect key="frame" x="143" y="593" width="90" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mza-1t-Pu5">
+                                <rect key="frame" x="142.5" y="593" width="91" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -98,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="inputLabel" destination="6rt-Zo-D3v" id="yMj-23-KsX"/>
+                        <outlet property="timerLabel" destination="mza-1t-Pu5" id="n41-RD-88Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5G-le-v0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
