@@ -11,7 +11,6 @@ import Speech
 
 class BattleViewController: UIViewController {
     
-    @IBOutlet weak var inputLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var aiIcon: UIImageView!
     @IBOutlet weak var userIcon: UIImageView!

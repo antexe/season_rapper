@@ -16,11 +16,30 @@ class CPVoiceViewController: UIViewController {
     var countdownTimer:Timer!
     var totalTime = 10
     
+    var aiText = "俺は東京生まれヒップホップ育ち、悪そうな奴は大体友達悪そうな奴と大体同じ、裏の道歩き見てきたこの街"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 背景すりガラス効果
+        let blurEffect = UIBlurEffect(style: .dark)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        visualEffectView.alpha = 1
+        visualEffectView.frame = self.view.frame
+        self.view.insertSubview(visualEffectView, at: 0)
+        
         // タイマーを再生
         startTimer()
+        
+        // 機械に話させる
+        AudioPlayer.shared.playTalk(aiText)
+        inputTextView.text = aiText
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // リリックを保存
+        CharacterScoring.shared.cpLyric = inputTextView.text
     }
     
 // ------- タイマーここから -----------------------------------------------

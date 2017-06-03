@@ -27,16 +27,12 @@ class SpeechViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 背景すりガラス効果
         let blurEffect = UIBlurEffect(style: .dark)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
-        
         visualEffectView.alpha = 1
-        
-        // エフェクトビューのサイズを指定（オリジナル画像と同じサイズにする）
         visualEffectView.frame = self.view.frame
         self.view.insertSubview(visualEffectView, at: 0)
-        
-        // Do any additional setup after loading the view.
         
         // カウントダウンタイマー
         timerLabel.text = "\(timeFormatted(totalTime))"
@@ -49,6 +45,12 @@ class SpeechViewController: UIViewController {
         try! startRecording()
         // タイマーを再生
         startTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // リリックを保存
+        CharacterScoring.shared.userLyric = inputTextView.text
     }
     
     private func startTimer() {
@@ -140,20 +142,7 @@ extension SpeechViewController: SFSpeechRecognizerDelegate {
                     print("02:\(item)")
                     print("02-1:\(item.formattedString)")
                 }
-                
                 self.inputTextView.text = result.bestTranscription.formattedString
-                
-                //しゃべると輪が広がる
-                UIView.animate(withDuration: 5, delay: 0, options: [.curveLinear], animations: { 
-                    self.circleView.transform = CGAffineTransform.init(scaleX: 10, y: 10)
-                    self.circleView.alpha = 1
-                }, completion: { (Bool) in
-                    self.circleView.transform = CGAffineTransform(scaleX: 1, y: 1)
-                    self.circleView.alpha = 0
-                })
-                
-                
-                
                 isFinal = result.isFinal
             }
             
