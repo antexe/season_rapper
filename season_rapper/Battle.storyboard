@@ -97,8 +97,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="aiIcon" destination="T9l-LD-ZiU" id="FwN-k1-j08"/>
                         <outlet property="inputLabel" destination="6rt-Zo-D3v" id="yMj-23-KsX"/>
                         <outlet property="timerLabel" destination="mza-1t-Pu5" id="n41-RD-88Z"/>
+                        <outlet property="userIcon" destination="Uty-a9-EG6" id="wpG-mj-tfa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5G-le-v0M" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,9 +14,9 @@ class SpeechViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var inputTextView: UITextView!
     @IBOutlet weak var micImageView: UIImageView!
-    @IBOutlet weak var chekiLabel: UILabel!
+    
     var countdownTimer:Timer!
-    var totalTime = 60
+    var totalTime = 10
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
@@ -27,8 +27,6 @@ class SpeechViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         let blurEffect = UIBlurEffect(style: .dark)
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         
@@ -42,8 +40,6 @@ class SpeechViewController: UIViewController {
         
         // カウントダウンタイマー
         timerLabel.text = "\(timeFormatted(totalTime))"
-        // 音声マイクの許可を取る
-        requestSpeechAuthorization()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,10 +49,6 @@ class SpeechViewController: UIViewController {
         try! startRecording()
         // タイマーを再生
         startTimer()
-        UIView.animate(withDuration: 1) { 
-            self.chekiLabel.transform = CGAffineTransform(translationX: 0, y: -10)
-            self.chekiLabel.alpha = 1
-        }
     }
     
     private func startTimer() {
@@ -97,42 +89,9 @@ class SpeechViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension SpeechViewController: SFSpeechRecognizerDelegate {
-    
-    fileprivate func requestSpeechAuthorization(){
-        SFSpeechRecognizer.requestAuthorization { authStatus in
-            /*
-             The callback may not be called on the main thread. Add an
-             operation to the main queue to update the record button's state.
-             */
-            OperationQueue.main.addOperation {
-                switch authStatus {
-                case .authorized:
-                    break
-                case .denied:
-                    break
-                case .restricted:
-                    break
-                case .notDetermined:
-                    break
-                }
-            }
-        }
-    }
     
     fileprivate func startRecording() throws {
         
