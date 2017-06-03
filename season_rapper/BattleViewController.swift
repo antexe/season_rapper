@@ -10,6 +10,7 @@ import UIKit
 
 class BattleViewController: UIViewController {
     
+    @IBOutlet weak var inputLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
