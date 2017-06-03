@@ -76,6 +76,7 @@ class SpeechViewController: UIViewController {
         if totalTime != 0 {
             totalTime -= 1
             
+            
             if totalTime < 10{
                 timerLabel.textColor = UIColor.red
             }
@@ -87,6 +88,9 @@ class SpeechViewController: UIViewController {
     
     private func endTimer() {
         countdownTimer.invalidate()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) { 
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

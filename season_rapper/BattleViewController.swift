@@ -41,9 +41,6 @@ class BattleViewController: UIViewController {
         try! startRecording()
         // タイマーを再生
         startTimer()
-        
-        
-        ScreenTransitionManager.shared.goToSpeech()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
