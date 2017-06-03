@@ -9,10 +9,16 @@
 import UIKit
 
 class TopViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // BGM再生
+        AudioPlayer.shared.playMusic(.op)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AudioPlayer.shared.stop()
     }
     
     @IBAction func Button1Tapped(_ sender: Any) {
