@@ -7,5 +7,6 @@ target 'season_rapper' do
 
   # Pods for season_rapper
   pod ‘SwaggerClient’, :path => '.'
+  pod ‘RhymeClient’, :path => '.'
 
 end
