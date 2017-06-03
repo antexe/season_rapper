@@ -10,6 +10,10 @@
 		28205B361EE3031F00DDCC34 /* op.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28205B351EE3031F00DDCC34 /* op.mp3 */; };
 		28205B381EE3032A00DDCC34 /* battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28205B371EE3032A00DDCC34 /* battle.mp3 */; };
 		28205B3A1EE3072600DDCC34 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28205B391EE3072600DDCC34 /* AudioPlayer.swift */; };
+		28205B3C1EE31AC900DDCC34 /* Last.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28205B3B1EE31AC900DDCC34 /* Last.storyboard */; };
+		28205B3E1EE31AE800DDCC34 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28205B3D1EE31AE800DDCC34 /* Result.storyboard */; };
+		28205B401EE31B0100DDCC34 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28205B3F1EE31B0100DDCC34 /* ResultViewController.swift */; };
+		28205B421EE31B0C00DDCC34 /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28205B411EE31B0C00DDCC34 /* LastViewController.swift */; };
 		28290F0C1EE2976700BDBCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F0B1EE2976700BDBCB7 /* AppDelegate.swift */; };
 		28290F111EE2976700BDBCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28290F0F1EE2976700BDBCB7 /* Main.storyboard */; };
 		28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28290F121EE2976700BDBCB7 /* Assets.xcassets */; };
@@ -30,6 +34,10 @@
 		28205B351EE3031F00DDCC34 /* op.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = op.mp3; sourceTree = "<group>"; };
 		28205B371EE3032A00DDCC34 /* battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = battle.mp3; sourceTree = "<group>"; };
 		28205B391EE3072600DDCC34 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		28205B3B1EE31AC900DDCC34 /* Last.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Last.storyboard; sourceTree = "<group>"; };
+		28205B3D1EE31AE800DDCC34 /* Result.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		28205B3F1EE31B0100DDCC34 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		28205B411EE31B0C00DDCC34 /* LastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
 		28290F081EE2976700BDBCB7 /* season_rapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = season_rapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28290F0B1EE2976700BDBCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28290F101EE2976700BDBCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +108,8 @@
 				28290F241EE2B17600BDBCB7 /* BattleViewController.swift */,
 				391B0AC31EE2F7A800E9884C /* SpeechViewController.swift */,
 				28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */,
+				28205B3F1EE31B0100DDCC34 /* ResultViewController.swift */,
+				28205B411EE31B0C00DDCC34 /* LastViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -121,6 +131,8 @@
 				28290F221EE2AFA000BDBCB7 /* Battle.storyboard */,
 				28290F281EE2B5B000BDBCB7 /* Theme.storyboard */,
 				391B0AC11EE2CEB300E9884C /* Speech.storyboard */,
+				28205B3D1EE31AE800DDCC34 /* Result.storyboard */,
+				28205B3B1EE31AC900DDCC34 /* Last.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -209,6 +221,8 @@
 				28290F291EE2B5B000BDBCB7 /* Theme.storyboard in Resources */,
 				28290F231EE2AFA000BDBCB7 /* Battle.storyboard in Resources */,
 				391B0AC21EE2CEB300E9884C /* Speech.storyboard in Resources */,
+				28205B3C1EE31AC900DDCC34 /* Last.storyboard in Resources */,
+				28205B3E1EE31AE800DDCC34 /* Result.storyboard in Resources */,
 				28290F161EE2976700BDBCB7 /* LaunchScreen.storyboard in Resources */,
 				28205B361EE3031F00DDCC34 /* op.mp3 in Resources */,
 				28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */,
@@ -272,8 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				28290F2B1EE2B5C900BDBCB7 /* ThemeViewController.swift in Sources */,
+				28205B421EE31B0C00DDCC34 /* LastViewController.swift in Sources */,
 				28290F251EE2B17600BDBCB7 /* BattleViewController.swift in Sources */,
 				28290F201EE29B0A00BDBCB7 /* TopViewController.swift in Sources */,
+				28205B401EE31B0100DDCC34 /* ResultViewController.swift in Sources */,
 				28290F271EE2B19800BDBCB7 /* ScreenTransitionManager.swift in Sources */,
 				391B0AC41EE2F7A800E9884C /* SpeechViewController.swift in Sources */,
 				28290F0C1EE2976700BDBCB7 /* AppDelegate.swift in Sources */,
