@@ -8,6 +8,7 @@
 
 import UIKit
 import SwaggerClient
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
-        TtsgetAPI.ttsGet(username: "", password: "", text: "こんにちは", speakerName: "nozomi", ext: "ogg", completion: {(response, err) in
+        TtsgetAPI.ttsGet(username: "", password: "", text: "こんにちは", speakerName: "nozomi", ext: "aac", completion: {(response, err) in
             print(response.debugDescription)
+            //AudioServicesPlaySystemSound(1000)
+            
+            let fileName = "test"
+            let fileType = "aac"
+            
+            if let url = Bundle.main.url(forResource: fileName, withExtension: fileType){
+                do{
+                    try AVAudioPlayer(contentsOf: url).play()
+                }
+                catch{
+                    print("erro")
+                }
+            }
+            
+            
+            do {
+                try AVAudioPlayer(data: response!).play()
+            }
+            catch{
+                print("sound error")
+            }
         })
         
         return true
