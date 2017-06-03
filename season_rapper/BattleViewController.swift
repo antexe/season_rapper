@@ -25,6 +25,9 @@ class BattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //BGM再生
+        AudioPlayer.shared.playMusic(.battle)
+        
         // カウントダウンタイマー
         timerLabel.text = "\(timeFormatted(totalTime))"
         // 音声マイクの許可を取る
@@ -41,6 +44,10 @@ class BattleViewController: UIViewController {
         
         
         ScreenTransitionManager.shared.goToSpeech()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AudioPlayer.shared.stop()
     }
     
     // MARK: - カウントダウンタイマー ------------------------------------------------------------

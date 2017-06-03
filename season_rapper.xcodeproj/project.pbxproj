@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28205B361EE3031F00DDCC34 /* op.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28205B351EE3031F00DDCC34 /* op.mp3 */; };
+		28205B381EE3032A00DDCC34 /* battle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28205B371EE3032A00DDCC34 /* battle.mp3 */; };
+		28205B3A1EE3072600DDCC34 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28205B391EE3072600DDCC34 /* AudioPlayer.swift */; };
 		28290F0C1EE2976700BDBCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F0B1EE2976700BDBCB7 /* AppDelegate.swift */; };
 		28290F111EE2976700BDBCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28290F0F1EE2976700BDBCB7 /* Main.storyboard */; };
 		28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28290F121EE2976700BDBCB7 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 
 /* Begin PBXFileReference section */
 		12B62AB89FD410AA6E6A1C2C /* Pods-season_rapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season_rapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-season_rapper/Pods-season_rapper.release.xcconfig"; sourceTree = "<group>"; };
+		28205B351EE3031F00DDCC34 /* op.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = op.mp3; sourceTree = "<group>"; };
+		28205B371EE3032A00DDCC34 /* battle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = battle.mp3; sourceTree = "<group>"; };
+		28205B391EE3072600DDCC34 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		28290F081EE2976700BDBCB7 /* season_rapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = season_rapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28290F0B1EE2976700BDBCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28290F101EE2976700BDBCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 				28290F1D1EE29ADB00BDBCB7 /* ViewController */,
 				28290F121EE2976700BDBCB7 /* Assets.xcassets */,
 				28290F171EE2976700BDBCB7 /* Info.plist */,
+				28205B351EE3031F00DDCC34 /* op.mp3 */,
+				28205B371EE3032A00DDCC34 /* battle.mp3 */,
 			);
 			path = season_rapper;
 			sourceTree = "<group>";
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				28290F261EE2B19800BDBCB7 /* ScreenTransitionManager.swift */,
+				28205B391EE3072600DDCC34 /* AudioPlayer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -196,10 +205,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28205B381EE3032A00DDCC34 /* battle.mp3 in Resources */,
 				28290F291EE2B5B000BDBCB7 /* Theme.storyboard in Resources */,
 				28290F231EE2AFA000BDBCB7 /* Battle.storyboard in Resources */,
 				391B0AC21EE2CEB300E9884C /* Speech.storyboard in Resources */,
 				28290F161EE2976700BDBCB7 /* LaunchScreen.storyboard in Resources */,
+				28205B361EE3031F00DDCC34 /* op.mp3 in Resources */,
 				28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */,
 				28290F111EE2976700BDBCB7 /* Main.storyboard in Resources */,
 			);
@@ -266,6 +277,7 @@
 				28290F271EE2B19800BDBCB7 /* ScreenTransitionManager.swift in Sources */,
 				391B0AC41EE2F7A800E9884C /* SpeechViewController.swift in Sources */,
 				28290F0C1EE2976700BDBCB7 /* AppDelegate.swift in Sources */,
+				28205B3A1EE3072600DDCC34 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
