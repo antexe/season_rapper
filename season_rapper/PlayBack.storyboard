@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8k9-Px-VGD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Play Back View Controller-->
+        <scene sceneID="tYA-Xx-LTY">
+            <objects>
+                <viewController id="8k9-Px-VGD" customClass="PlayBackViewController" customModule="season_rapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g0g-qY-36F"/>
+                        <viewControllerLayoutGuide type="bottom" id="JtU-8A-nRw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FoB-Pd-UH6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_op" translatesAutoresizingMaskIntoConstraints="NO" id="vZ2-Vt-wAa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テーマ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgi-1S-kfM">
+                                <rect key="frame" x="162" y="280.5" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="『さくら』" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-vA-n0z">
+                                <rect key="frame" x="87.5" y="309.5" width="201.5" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqA-BS-W8q">
+                                <rect key="frame" x="28" y="515" width="320" height="80"/>
+                                <state key="normal" image="backtotop"/>
+                                <connections>
+                                    <action selector="goToTopButtonTapped:" destination="8k9-Px-VGD" eventType="touchUpInside" id="4Uj-BL-8iv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vZ2-Vt-wAa" firstAttribute="leading" secondItem="FoB-Pd-UH6" secondAttribute="leading" id="1GH-tT-qGj"/>
+                            <constraint firstAttribute="trailing" secondItem="vZ2-Vt-wAa" secondAttribute="trailing" id="4e9-du-ONY"/>
+                            <constraint firstItem="dgi-1S-kfM" firstAttribute="centerX" secondItem="FoB-Pd-UH6" secondAttribute="centerX" id="KL5-bK-bjo"/>
+                            <constraint firstItem="gYY-vA-n0z" firstAttribute="top" secondItem="dgi-1S-kfM" secondAttribute="bottom" constant="8" id="S6s-sW-GNa"/>
+                            <constraint firstItem="gYY-vA-n0z" firstAttribute="centerY" secondItem="FoB-Pd-UH6" secondAttribute="centerY" id="SAM-9X-TNS"/>
+                            <constraint firstItem="JtU-8A-nRw" firstAttribute="top" secondItem="bqA-BS-W8q" secondAttribute="bottom" constant="72" id="VXm-g3-BGh"/>
+                            <constraint firstItem="bqA-BS-W8q" firstAttribute="centerX" secondItem="FoB-Pd-UH6" secondAttribute="centerX" id="X0Z-XD-BKI"/>
+                            <constraint firstItem="JtU-8A-nRw" firstAttribute="top" secondItem="vZ2-Vt-wAa" secondAttribute="bottom" id="chD-Xh-HAm"/>
+                            <constraint firstItem="vZ2-Vt-wAa" firstAttribute="top" secondItem="FoB-Pd-UH6" secondAttribute="top" id="e1W-Db-pmY"/>
+                            <constraint firstItem="gYY-vA-n0z" firstAttribute="centerX" secondItem="FoB-Pd-UH6" secondAttribute="centerX" id="xX1-1L-bSO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="winnerLabel" destination="gYY-vA-n0z" id="J7J-Dr-l1Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKW-6d-2iE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="136"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background_op" width="375" height="667"/>
+        <image name="backtotop" width="320" height="80"/>
+    </resources>
+</document>
