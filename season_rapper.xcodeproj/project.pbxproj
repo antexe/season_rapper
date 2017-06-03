@@ -14,6 +14,8 @@
 		28205B3E1EE31AE800DDCC34 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28205B3D1EE31AE800DDCC34 /* Result.storyboard */; };
 		28205B401EE31B0100DDCC34 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28205B3F1EE31B0100DDCC34 /* ResultViewController.swift */; };
 		28205B421EE31B0C00DDCC34 /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28205B411EE31B0C00DDCC34 /* LastViewController.swift */; };
+		28205B441EE329FC00DDCC34 /* PlayBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28205B431EE329FC00DDCC34 /* PlayBack.storyboard */; };
+		28205B461EE32A0A00DDCC34 /* PlayBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28205B451EE32A0A00DDCC34 /* PlayBackViewController.swift */; };
 		28290F0C1EE2976700BDBCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F0B1EE2976700BDBCB7 /* AppDelegate.swift */; };
 		28290F111EE2976700BDBCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28290F0F1EE2976700BDBCB7 /* Main.storyboard */; };
 		28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28290F121EE2976700BDBCB7 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		28205B3D1EE31AE800DDCC34 /* Result.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		28205B3F1EE31B0100DDCC34 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		28205B411EE31B0C00DDCC34 /* LastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
+		28205B431EE329FC00DDCC34 /* PlayBack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayBack.storyboard; sourceTree = "<group>"; };
+		28205B451EE32A0A00DDCC34 /* PlayBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayBackViewController.swift; sourceTree = "<group>"; };
 		28290F081EE2976700BDBCB7 /* season_rapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = season_rapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28290F0B1EE2976700BDBCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28290F101EE2976700BDBCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */,
 				28205B3F1EE31B0100DDCC34 /* ResultViewController.swift */,
 				28205B411EE31B0C00DDCC34 /* LastViewController.swift */,
+				28205B451EE32A0A00DDCC34 /* PlayBackViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				391B0AC11EE2CEB300E9884C /* Speech.storyboard */,
 				28205B3D1EE31AE800DDCC34 /* Result.storyboard */,
 				28205B3B1EE31AC900DDCC34 /* Last.storyboard */,
+				28205B431EE329FC00DDCC34 /* PlayBack.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 				28205B3C1EE31AC900DDCC34 /* Last.storyboard in Resources */,
 				28205B3E1EE31AE800DDCC34 /* Result.storyboard in Resources */,
 				28290F161EE2976700BDBCB7 /* LaunchScreen.storyboard in Resources */,
+				28205B441EE329FC00DDCC34 /* PlayBack.storyboard in Resources */,
 				28205B361EE3031F00DDCC34 /* op.mp3 in Resources */,
 				28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */,
 				28290F111EE2976700BDBCB7 /* Main.storyboard in Resources */,
@@ -294,6 +301,7 @@
 				391B0AC41EE2F7A800E9884C /* SpeechViewController.swift in Sources */,
 				28290F0C1EE2976700BDBCB7 /* AppDelegate.swift in Sources */,
 				28205B3A1EE3072600DDCC34 /* AudioPlayer.swift in Sources */,
+				28205B461EE32A0A00DDCC34 /* PlayBackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
