@@ -23,10 +23,18 @@ class TopViewController: UIViewController {
     
     @IBAction func Button1Tapped(_ sender: Any) {
         ScreenTransitionManager.shared.goToTheme()
+        
+        // UserDefaultsにプレイヤー数を保存
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(1, forKey: "playerCount")
     }
     
     @IBAction func Button2Tapped(_ sender: Any) {
         ScreenTransitionManager.shared.goToTheme()
+        
+        // UserDefaultsにプレイヤー数を保存
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(2, forKey: "playerCount")
     }
 }
 

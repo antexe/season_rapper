@@ -13,6 +13,10 @@ class BattleViewController: UIViewController {
     
     @IBOutlet weak var inputLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var playerOneIcon: UIImageView!
+    @IBOutlet weak var playerTwoIcon: UIImageView!
+    @IBOutlet weak var cpuIcon: UIImageView!
+    
     
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -24,6 +28,34 @@ class BattleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //アイコンを描画
+        //userDefaultsからプレイヤー数を取得
+        let userDefaults = UserDefaults.standard
+        let playerCount = userDefaults.integer(forKey: "playerCount")
+        
+        //プレイヤー数に応じてアイコンを描画する
+        //プレイヤー数が1人の時
+        if playerCount == 1 {
+            //Plyer1(Buttom)
+            playerOneIcon = UIImageView(frame: drawToBottom())
+            
+            //Player2(Hidden)
+            playerTwoIcon.isHidden = true
+            
+            //CPU(Upper)
+            cpuIcon = UIImageView(frame: drawToUpper())
+            
+        } else if playerCount == 2 {
+            //Plyer1(Buttom)
+            playerOneIcon = UIImageView(frame: drawToBottom())
+            
+            //Player2(UpperRight)
+            playerTwoIcon = UIImageView(frame: drawToUpperRight())
+            
+            //CPU(UpperLeft)
+            cpuIcon = UIImageView(frame: drawToUpperLeft())
+        }
+        
         
         //BGM再生
         AudioPlayer.shared.playMusic(.battle)
@@ -176,5 +208,29 @@ extension BattleViewController: SFSpeechRecognizerDelegate {
         audioEngine.prepare()
         
         try audioEngine.start()
+    }
+    
+    // 左上にアイコンを描画
+    func drawToUpperLeft() -> CGRect {
+        let drawLeftValue = CGRect(x: 51, y: 263, width: 60, height: 60)
+        return drawLeftValue
+    }
+    
+    // 右上にアイコンを描画
+    func drawToUpperRight() -> CGRect {
+        let drawRightValue = CGRect(x: 324, y: 263, width: 60, height: 60)
+        return drawRightValue
+    }
+    
+    // 下にアイコンを描画
+    func drawToBottom() -> CGRect {
+        let drawButtomValue = CGRect(x: self.view.frame.width/2, y: 474, width: 125, height: 125)
+        return drawButtomValue
+    }
+    
+    // 真上にアイコンを描画
+    func drawToUpper() -> CGRect {
+        let drawButtomValue = CGRect(x: self.view.frame.width/2, y: 184, width: 60, height: 60)
+        return drawButtomValue
     }
 }
