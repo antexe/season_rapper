@@ -1,3 +1,19 @@
-PODFILE CHECKSUM: 14ca124a5207475f83f7ed48b5ec8a6d32dbca44
+PODS:
+  - Alamofire (4.4.0)
+  - SwaggerClient (0.0.1):
+    - Alamofire (~> 4.0)
+
+DEPENDENCIES:
+  - SwaggerClient (from `.`)
+
+EXTERNAL SOURCES:
+  SwaggerClient:
+    :path: .
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  SwaggerClient: 08534fedfb107603b5c44950a77244f959ebc790
+
+PODFILE CHECKSUM: f0ec1892e234c3ae958ba1e9e0f671d22fc88b90
 
 COCOAPODS: 1.2.0
