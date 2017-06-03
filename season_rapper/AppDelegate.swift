@@ -25,22 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let fileName = "test"
             let fileType = "aac"
-            
             if let url = Bundle.main.url(forResource: fileName, withExtension: fileType){
                 do{
-                    try AVAudioPlayer(contentsOf: url).play()
+                    let player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeAppleM4A)
+                    player.play()
                 }
                 catch{
                     print("erro")
                 }
-            }
-            
-            
-            do {
-                try AVAudioPlayer(data: response!).play()
-            }
-            catch{
-                print("sound error")
             }
         })
         

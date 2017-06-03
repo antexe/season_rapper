@@ -1,0 +1,85 @@
+swagger: '2.0'
+info:
+  title: rapper API
+  description: rapper API
+  version: 0.0.1
+host: webapi.aitalk.jp
+schemes:
+  - https
+basePath: /webapi/v2
+produces:
+  - application/json
+paths:
+  /ttsget.php:
+    get:
+      summary: 音声合成
+      description: 音声合成
+      operationId: ttsGet
+      parameters:
+        - name: username
+          in: query
+          description: user name
+          required: true
+          type: string
+        - name: password
+          in: query
+          description: password
+          required: true
+          type: string
+        - name: text
+          in: query
+          description: text
+          required: true
+          type: string
+        - name: speaker_name
+          in: query
+          description: 話者別紙参照
+          required: true
+          type: string
+        - name: ext
+          in: query
+          description: '出力形式(ogg,aac,wav)'
+          required: true
+          type: string
+        - name: volume
+          in: query
+          description: volume(0.01~2.00)
+          type: string
+        - name: speed
+          in: query
+          description: speed(0.05~4.00)
+          type: string
+        - name: pitch
+          in: query
+          description: ピッチ(0.50~2.00)
+          type: string
+        - name: range
+          in: query
+          description: 抑揚(0.00~2.00)
+          type: string
+        - name: style
+          in: query
+          description: 感情speakerの対応状況による(喜、悲、怒)
+          type: string
+      tags:
+        - Ttsget
+      responses:
+        '200':
+          description: An array of products
+          schema:
+            $ref: '#/definitions/Sound'
+        '500':
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Sound:
+    type: string
+    format: binary
+  Error:
+    type: object
+    properties:
+      code:
+        type: string
+      message:
+        type: string

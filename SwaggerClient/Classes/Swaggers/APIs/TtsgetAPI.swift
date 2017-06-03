@@ -16,12 +16,17 @@ open class TtsgetAPI: APIBase {
      - parameter username: (query) user name 
      - parameter password: (query) password 
      - parameter text: (query) text 
-     - parameter speakerName: (query) speaker name 
-     - parameter ext: (query) ext 
+     - parameter speakerName: (query) 話者別紙参照 
+     - parameter ext: (query) 出力形式(ogg,aac,wav) 
+     - parameter volume: (query) volume(0.01~2.00) (optional)
+     - parameter speed: (query) speed(0.05~4.00) (optional)
+     - parameter pitch: (query) ピッチ(0.50~2.00) (optional)
+     - parameter range: (query) 抑揚(0.00~2.00) (optional)
+     - parameter style: (query) 感情speakerの対応状況による(喜、悲、怒) (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func ttsGet(username: String, password: String, text: String, speakerName: String, ext: String, completion: @escaping ((_ data: Data?,_ error: Error?) -> Void)) {
-        ttsGetWithRequestBuilder(username: username, password: password, text: text, speakerName: speakerName, ext: ext).execute { (response, error) -> Void in
+    open class func ttsGet(username: String, password: String, text: String, speakerName: String, ext: String, volume: String? = nil, speed: String? = nil, pitch: String? = nil, range: String? = nil, style: String? = nil, completion: @escaping ((_ data: Data?,_ error: Error?) -> Void)) {
+        ttsGetWithRequestBuilder(username: username, password: password, text: text, speakerName: speakerName, ext: ext, volume: volume, speed: speed, pitch: pitch, range: range, style: style).execute { (response, error) -> Void in
             completion(response?.body, error);
         }
     }
@@ -36,12 +41,17 @@ open class TtsgetAPI: APIBase {
      - parameter username: (query) user name 
      - parameter password: (query) password 
      - parameter text: (query) text 
-     - parameter speakerName: (query) speaker name 
-     - parameter ext: (query) ext 
+     - parameter speakerName: (query) 話者別紙参照 
+     - parameter ext: (query) 出力形式(ogg,aac,wav) 
+     - parameter volume: (query) volume(0.01~2.00) (optional)
+     - parameter speed: (query) speed(0.05~4.00) (optional)
+     - parameter pitch: (query) ピッチ(0.50~2.00) (optional)
+     - parameter range: (query) 抑揚(0.00~2.00) (optional)
+     - parameter style: (query) 感情speakerの対応状況による(喜、悲、怒) (optional)
 
      - returns: RequestBuilder<Data> 
      */
-    open class func ttsGetWithRequestBuilder(username: String, password: String, text: String, speakerName: String, ext: String) -> RequestBuilder<Data> {
+    open class func ttsGetWithRequestBuilder(username: String, password: String, text: String, speakerName: String, ext: String, volume: String? = nil, speed: String? = nil, pitch: String? = nil, range: String? = nil, style: String? = nil) -> RequestBuilder<Data> {
         let path = "/ttsget.php"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters: [String:Any]? = nil
@@ -52,7 +62,12 @@ open class TtsgetAPI: APIBase {
             "password": password, 
             "text": text, 
             "speaker_name": speakerName, 
-            "ext": ext
+            "ext": ext, 
+            "volume": volume, 
+            "speed": speed, 
+            "pitch": pitch, 
+            "range": range, 
+            "style": style
         ])
         
 
