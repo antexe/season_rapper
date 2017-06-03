@@ -12,6 +12,11 @@
 		28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28290F121EE2976700BDBCB7 /* Assets.xcassets */; };
 		28290F161EE2976700BDBCB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28290F141EE2976700BDBCB7 /* LaunchScreen.storyboard */; };
 		28290F201EE29B0A00BDBCB7 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F1F1EE29B0A00BDBCB7 /* TopViewController.swift */; };
+		28290F231EE2AFA000BDBCB7 /* Battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28290F221EE2AFA000BDBCB7 /* Battle.storyboard */; };
+		28290F251EE2B17600BDBCB7 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F241EE2B17600BDBCB7 /* BattleViewController.swift */; };
+		28290F271EE2B19800BDBCB7 /* ScreenTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F261EE2B19800BDBCB7 /* ScreenTransitionManager.swift */; };
+		28290F291EE2B5B000BDBCB7 /* Theme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28290F281EE2B5B000BDBCB7 /* Theme.storyboard */; };
+		28290F2B1EE2B5C900BDBCB7 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */; };
 		D35E2F682A5AF822A3917384 /* Pods_season_rapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BFF0EE822AA3A3F87BF53C /* Pods_season_rapper.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +29,11 @@
 		28290F151EE2976700BDBCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28290F171EE2976700BDBCB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28290F1F1EE29B0A00BDBCB7 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		28290F221EE2AFA000BDBCB7 /* Battle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Battle.storyboard; sourceTree = "<group>"; };
+		28290F241EE2B17600BDBCB7 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		28290F261EE2B19800BDBCB7 /* ScreenTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenTransitionManager.swift; sourceTree = "<group>"; };
+		28290F281EE2B5B000BDBCB7 /* Theme.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Theme.storyboard; sourceTree = "<group>"; };
+		28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		568082A83DB256987A63766C /* Pods-season_rapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season_rapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-season_rapper/Pods-season_rapper.debug.xcconfig"; sourceTree = "<group>"; };
 		C9BFF0EE822AA3A3F87BF53C /* Pods_season_rapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_season_rapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				28290F1F1EE29B0A00BDBCB7 /* TopViewController.swift */,
+				28290F241EE2B17600BDBCB7 /* BattleViewController.swift */,
+				28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -82,6 +94,7 @@
 		28290F1E1EE29AE400BDBCB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				28290F261EE2B19800BDBCB7 /* ScreenTransitionManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -91,6 +104,8 @@
 			children = (
 				28290F141EE2976700BDBCB7 /* LaunchScreen.storyboard */,
 				28290F0F1EE2976700BDBCB7 /* Main.storyboard */,
+				28290F221EE2AFA000BDBCB7 /* Battle.storyboard */,
+				28290F281EE2B5B000BDBCB7 /* Theme.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -147,6 +162,7 @@
 				TargetAttributes = {
 					28290F071EE2976700BDBCB7 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MEEJZL2H5S;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -174,6 +190,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28290F291EE2B5B000BDBCB7 /* Theme.storyboard in Resources */,
+				28290F231EE2AFA000BDBCB7 /* Battle.storyboard in Resources */,
 				28290F161EE2976700BDBCB7 /* LaunchScreen.storyboard in Resources */,
 				28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */,
 				28290F111EE2976700BDBCB7 /* Main.storyboard in Resources */,
@@ -235,7 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28290F2B1EE2B5C900BDBCB7 /* ThemeViewController.swift in Sources */,
+				28290F251EE2B17600BDBCB7 /* BattleViewController.swift in Sources */,
 				28290F201EE29B0A00BDBCB7 /* TopViewController.swift in Sources */,
+				28290F271EE2B19800BDBCB7 /* ScreenTransitionManager.swift in Sources */,
 				28290F0C1EE2976700BDBCB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +381,7 @@
 			baseConfigurationReference = 568082A83DB256987A63766C /* Pods-season_rapper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MEEJZL2H5S;
 				INFOPLIST_FILE = season_rapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rising-sun.season-rapper";
@@ -373,6 +395,7 @@
 			baseConfigurationReference = 12B62AB89FD410AA6E6A1C2C /* Pods-season_rapper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MEEJZL2H5S;
 				INFOPLIST_FILE = season_rapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rising-sun.season-rapper";

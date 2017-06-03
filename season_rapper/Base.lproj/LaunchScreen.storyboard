@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +20,33 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_op" translatesAutoresizingMaskIntoConstraints="NO" id="NGz-n5-ROc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="EuX-aQ-x7k">
+                                <rect key="frame" x="67.5" y="268.5" width="240" height="130"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EuX-aQ-x7k" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Bkn-mo-wdM"/>
+                            <constraint firstItem="EuX-aQ-x7k" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HuJ-oW-2kD"/>
+                            <constraint firstAttribute="trailing" secondItem="NGz-n5-ROc" secondAttribute="trailing" id="Otc-D8-MI7"/>
+                            <constraint firstItem="NGz-n5-ROc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="bCe-Cv-MFL"/>
+                            <constraint firstItem="NGz-n5-ROc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hlg-7e-i3d"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="NGz-n5-ROc" secondAttribute="bottom" id="j5y-xV-R4e"/>
+                        </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background_op" width="375" height="667"/>
+        <image name="logo" width="240" height="130"/>
+    </resources>
 </document>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B9a-gL-49d">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Battle View Controller-->
+        <scene sceneID="Lx8-Jp-Uwg">
+            <objects>
+                <viewController id="B9a-gL-49d" customClass="BattleViewController" customModule="season_rapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DH4-KH-heT"/>
+                        <viewControllerLayoutGuide type="bottom" id="DLp-0b-EG2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CWT-Go-B4F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="oZA-xn-oqK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="oZA-xn-oqK" secondAttribute="bottom" id="Tkh-qx-hN0"/>
+                            <constraint firstItem="oZA-xn-oqK" firstAttribute="top" secondItem="CWT-Go-B4F" secondAttribute="top" id="bL8-1i-1eL"/>
+                            <constraint firstItem="oZA-xn-oqK" firstAttribute="leading" secondItem="CWT-Go-B4F" secondAttribute="leading" id="gol-bB-oH3"/>
+                            <constraint firstAttribute="trailing" secondItem="oZA-xn-oqK" secondAttribute="trailing" id="p8B-M7-qvx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5G-le-v0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297" y="189"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="375" height="667"/>
+    </resources>
+</document>
