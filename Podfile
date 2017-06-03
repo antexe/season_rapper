@@ -6,5 +6,6 @@ target 'season_rapper' do
   use_frameworks!
 
   # Pods for season_rapper
+  pod ‘SwaggerClient’, :path => '.'
 
 end
