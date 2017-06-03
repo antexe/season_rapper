@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.4.0)
   - RhymeClient (0.0.1):
     - Alamofire (~> 4.0)
   - SwaggerClient (0.0.1):
@@ -11,15 +11,15 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   RhymeClient:
-    :path: .
+    :path: "."
   SwaggerClient:
-    :path: .
+    :path: "."
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   RhymeClient: 808c8ee2053656fc25ecad0acaa7ee39309683cd
   SwaggerClient: 08534fedfb107603b5c44950a77244f959ebc790
 
 PODFILE CHECKSUM: b2d37e3b8f25f4cc21d3dd57492d4de1453d0a5b
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.2.0

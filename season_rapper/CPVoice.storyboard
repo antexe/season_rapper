@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dPe-ID-ffd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Voice View Controller-->
+        <scene sceneID="NVo-6C-aRh">
+            <objects>
+                <viewController id="dPe-ID-ffd" customClass="CPVoiceViewController" customModule="season_rapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qrk-2h-hgs"/>
+                        <viewControllerLayoutGuide type="bottom" id="b7A-dx-hns"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tPK-WM-IVl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AI" translatesAutoresizingMaskIntoConstraints="NO" id="CWp-iH-W7u">
+                                <rect key="frame" x="158" y="497" width="60" height="60"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPa-FF-qo7">
+                                <rect key="frame" x="24" y="36" width="343" height="441"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdL-3Y-gOm">
+                                <rect key="frame" x="16" y="567" width="343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CWp-iH-W7u" firstAttribute="top" secondItem="xPa-FF-qo7" secondAttribute="bottom" constant="20" id="52c-C0-Liq"/>
+                            <constraint firstItem="SdL-3Y-gOm" firstAttribute="leading" secondItem="tPK-WM-IVl" secondAttribute="leadingMargin" id="6oA-Om-RhW"/>
+                            <constraint firstItem="xPa-FF-qo7" firstAttribute="top" secondItem="tPK-WM-IVl" secondAttribute="topMargin" constant="36" id="GDV-y2-zjE"/>
+                            <constraint firstItem="xPa-FF-qo7" firstAttribute="leading" secondItem="tPK-WM-IVl" secondAttribute="leadingMargin" constant="8" id="OPE-dr-wXQ"/>
+                            <constraint firstItem="b7A-dx-hns" firstAttribute="top" secondItem="SdL-3Y-gOm" secondAttribute="bottom" constant="70" id="dgg-gt-jdE"/>
+                            <constraint firstItem="SdL-3Y-gOm" firstAttribute="top" secondItem="CWp-iH-W7u" secondAttribute="bottom" constant="10" id="k8k-TK-njf"/>
+                            <constraint firstItem="CWp-iH-W7u" firstAttribute="centerX" secondItem="tPK-WM-IVl" secondAttribute="centerX" id="lNc-ba-xNV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SdL-3Y-gOm" secondAttribute="trailing" id="mqr-Yb-gbh"/>
+                            <constraint firstAttribute="trailing" secondItem="xPa-FF-qo7" secondAttribute="trailing" constant="8" id="u2h-KC-NG0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextView" destination="xPa-FF-qo7" id="xBg-Ni-YtT"/>
+                        <outlet property="timerLabel" destination="SdL-3Y-gOm" id="Zoe-6H-Ovh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21B-1Z-eY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1042.4000000000001" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AI" width="60" height="60"/>
+    </resources>
+</document>

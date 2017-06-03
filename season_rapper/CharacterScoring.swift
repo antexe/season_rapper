@@ -23,7 +23,18 @@ class CharacterScoring {
     private init(){
     }
     
-    func scoring(_ rapString: String) -> Int {
+    // ユーザーのリリックを保存
+    var userLyric = ""
+    // CPのリリックを保存
+    var cpLyric = ""
+    
+    func getResult() -> (userScore: Int, cpScore: Int) {
+        let userScore = scoring(userLyric)
+        let cpScore = scoring(cpLyric)
+        return (userScore, cpScore)
+    }
+    
+    private func scoring(_ rapString: String) -> Int {
         
         /// 検索するキーワード
         let searchKeyword1: String = "さくら"

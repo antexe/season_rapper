@@ -28,6 +28,9 @@
 		28290F291EE2B5B000BDBCB7 /* Theme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28290F281EE2B5B000BDBCB7 /* Theme.storyboard */; };
 		28290F2B1EE2B5C900BDBCB7 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */; };
 		2853DBD51EE32F5F00F314AE /* op.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 28205B491EE32C6F00DDCC34 /* op.mp4 */; };
+		2853DBD71EE3362A00F314AE /* CPVoice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2853DBD61EE3362A00F314AE /* CPVoice.storyboard */; };
+		2853DBD91EE3368E00F314AE /* CPVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853DBD81EE3368E00F314AE /* CPVoiceViewController.swift */; };
+		2853DBDB1EE3415100F314AE /* CharacterScoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853DBDA1EE3415100F314AE /* CharacterScoring.swift */; };
 		391B0AC21EE2CEB300E9884C /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391B0AC11EE2CEB300E9884C /* Speech.storyboard */; };
 		391B0AC41EE2F7A800E9884C /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B0AC31EE2F7A800E9884C /* SpeechViewController.swift */; };
 		D35E2F682A5AF822A3917384 /* Pods_season_rapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BFF0EE822AA3A3F87BF53C /* Pods_season_rapper.framework */; };
@@ -58,6 +61,9 @@
 		28290F261EE2B19800BDBCB7 /* ScreenTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenTransitionManager.swift; sourceTree = "<group>"; };
 		28290F281EE2B5B000BDBCB7 /* Theme.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Theme.storyboard; sourceTree = "<group>"; };
 		28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		2853DBD61EE3362A00F314AE /* CPVoice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CPVoice.storyboard; sourceTree = "<group>"; };
+		2853DBD81EE3368E00F314AE /* CPVoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPVoiceViewController.swift; sourceTree = "<group>"; };
+		2853DBDA1EE3415100F314AE /* CharacterScoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterScoring.swift; sourceTree = "<group>"; };
 		391B0AC11EE2CEB300E9884C /* Speech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
 		391B0AC31EE2F7A800E9884C /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		568082A83DB256987A63766C /* Pods-season_rapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season_rapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-season_rapper/Pods-season_rapper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 				28205B3F1EE31B0100DDCC34 /* ResultViewController.swift */,
 				28205B411EE31B0C00DDCC34 /* LastViewController.swift */,
 				28205B451EE32A0A00DDCC34 /* PlayBackViewController.swift */,
+				2853DBD81EE3368E00F314AE /* CPVoiceViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -128,6 +135,7 @@
 		28290F1E1EE29AE400BDBCB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2853DBDA1EE3415100F314AE /* CharacterScoring.swift */,
 				28290F261EE2B19800BDBCB7 /* ScreenTransitionManager.swift */,
 				28205B391EE3072600DDCC34 /* AudioPlayer.swift */,
 			);
@@ -145,6 +153,7 @@
 				28205B3D1EE31AE800DDCC34 /* Result.storyboard */,
 				28205B3B1EE31AC900DDCC34 /* Last.storyboard */,
 				28205B431EE329FC00DDCC34 /* PlayBack.storyboard */,
+				2853DBD61EE3362A00F314AE /* CPVoice.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -232,6 +241,7 @@
 				2853DBD51EE32F5F00F314AE /* op.mp4 in Resources */,
 				28205B381EE3032A00DDCC34 /* battle.mp3 in Resources */,
 				28290F291EE2B5B000BDBCB7 /* Theme.storyboard in Resources */,
+				2853DBD71EE3362A00F314AE /* CPVoice.storyboard in Resources */,
 				28290F231EE2AFA000BDBCB7 /* Battle.storyboard in Resources */,
 				391B0AC21EE2CEB300E9884C /* Speech.storyboard in Resources */,
 				28205B3C1EE31AC900DDCC34 /* Last.storyboard in Resources */,
@@ -301,6 +311,8 @@
 			files = (
 				28290F2B1EE2B5C900BDBCB7 /* ThemeViewController.swift in Sources */,
 				28205B421EE31B0C00DDCC34 /* LastViewController.swift in Sources */,
+				2853DBDB1EE3415100F314AE /* CharacterScoring.swift in Sources */,
+				2853DBD91EE3368E00F314AE /* CPVoiceViewController.swift in Sources */,
 				28290F251EE2B17600BDBCB7 /* BattleViewController.swift in Sources */,
 				28290F201EE29B0A00BDBCB7 /* TopViewController.swift in Sources */,
 				28205B401EE31B0100DDCC34 /* ResultViewController.swift in Sources */,

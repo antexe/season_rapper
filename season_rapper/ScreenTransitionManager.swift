@@ -71,6 +71,13 @@ class ScreenTransitionManager {
         showTranslucenceView(controller)
     }
     
+    // CPのボイス画面に飛ぶ
+    func goToCPVoice(){
+        let storyboard = UIStoryboard(name: "CPVoice", bundle: nil)
+        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        showTranslucenceView(controller)
+    }
+    
     // 結果のViewControllerに飛ぶ
     func goToResult(){
         let storyboard = UIStoryboard(name: "Result", bundle: nil)

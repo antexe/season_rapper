@@ -11,8 +11,9 @@ import Speech
 
 class BattleViewController: UIViewController {
     
-    @IBOutlet weak var inputLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var aiIcon: UIImageView!
+    @IBOutlet weak var userIcon: UIImageView!
     
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -32,13 +33,17 @@ class BattleViewController: UIViewController {
         timerLabel.text = "\(timeFormatted(totalTime))"
         // 音声マイクの許可を取る
         requestSpeechAuthorization()
+        
+        // アイコンタップイベント(仮)
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(BattleViewController.aiTap(_:)))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(BattleViewController.userTap(_:)))
+        aiIcon.addGestureRecognizer(tap1)
+        userIcon.addGestureRecognizer(tap2)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         speechRecognizer.delegate = self
         
-        // レコーディングをスタート
-        try! startRecording()
         // タイマーを再生
         startTimer()
     }
@@ -106,75 +111,16 @@ extension BattleViewController: SFSpeechRecognizerDelegate {
             }
         }
     }
+}
+
+extension BattleViewController {
     
-    fileprivate func startRecording() throws {
-        
-        // Cancel the previous task if it's running.
-        if let recognitionTask = recognitionTask {
-            recognitionTask.cancel()
-            self.recognitionTask = nil
-        }
-        
-        let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(AVAudioSessionCategoryRecord)
-        try audioSession.setMode(AVAudioSessionModeMeasurement)
-        try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
-        
-        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        
-        guard let inputNode = audioEngine.inputNode else { fatalError("Audio engine has no input node") }
-        guard let recognitionRequest = recognitionRequest else { fatalError("Unable to created a SFSpeechAudioBufferRecognitionRequest object") }
-        
-        // Configure request so that results are returned before audio recording is finished
-        recognitionRequest.shouldReportPartialResults = true
-        
-        // A recognition task represents a speech recognition session.
-        // We keep a reference to the task so that it can be cancelled.
-        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
-            var isFinal = false
-            
-            if let result = result {
-                
-                print("recognitionReq:\(recognitionRequest)")
-                print("result:\(result)")
-                print("hypothesis:\(result.transcriptions)")
-                print("besttranscription:\(result.bestTranscription)")
-                print("formatedStr:\(result.bestTranscription.formattedString)")
-                
-                let list = result.bestTranscription.segments.flatMap{$0}
-                let list01 = result.transcriptions.flatMap{$0}
-                
-                for item in list {
-                    print("01:\(item)")
-                    item.substring
-                    print("01-1:\(item.alternativeSubstrings)")
-                }
-                
-                for item in list01{
-                    print("02:\(item)")
-                    print("02-1:\(item.formattedString)")
-                }
-                
-                self.inputLabel.text = result.bestTranscription.formattedString
-                isFinal = result.isFinal
-            }
-            
-            if error != nil || isFinal {
-                self.audioEngine.stop()
-                inputNode.removeTap(onBus: 0)
-                
-                self.recognitionRequest = nil
-                self.recognitionTask = nil
-            }
-        }
-        
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
-            self.recognitionRequest?.append(buffer)
-        }
-        
-        audioEngine.prepare()
-        
-        try audioEngine.start()
+    func aiTap(_ sender: UITapGestureRecognizer){
+        ScreenTransitionManager.shared.goToCPVoice()
     }
+    
+    func userTap(_ sender: UITapGestureRecognizer){
+        ScreenTransitionManager.shared.goToSpeech()
+    }
+    
 }
