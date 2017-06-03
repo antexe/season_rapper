@@ -8,11 +8,15 @@
 
 import UIKit
 
+
 class ThemeViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // 3秒後にバトル画面へ遷移
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             ScreenTransitionManager.shared.goToBattle()
@@ -20,3 +24,7 @@ class ThemeViewController: UIViewController {
     }
 
 }
+
+
+
+
