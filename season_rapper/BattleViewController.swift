@@ -9,59 +9,44 @@
 import UIKit
 import Speech
 
-class BattleViewController: UIViewController,SFSpeechRecognizerDelegate {
+class BattleViewController: UIViewController {
     
     @IBOutlet weak var inputLabel: UILabel!
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
-    
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    
     @IBOutlet weak var timerLabel: UILabel!
     
-    private var recognitionTask: SFSpeechRecognitionTask?
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
+    var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    var recognitionTask: SFSpeechRecognitionTask?
+    let audioEngine = AVAudioEngine()
     
-    private let audioEngine = AVAudioEngine()
     var countdownTimer:Timer!
     var totalTime = 60
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // カウントダウンタイマー
         timerLabel.text = "\(timeFormatted(totalTime))"
+        // 音声マイクの許可を取る
+        requestSpeechAuthorization()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         speechRecognizer.delegate = self
         
-        
-        SFSpeechRecognizer.requestAuthorization { authStatus in
-            /*
-             The callback may not be called on the main thread. Add an
-             operation to the main queue to update the record button's state.
-             */
-            OperationQueue.main.addOperation {
-                switch authStatus {
-                case .authorized:
-                        break
-                case .denied:
-                    break
-                case .restricted:
-                    break
-                case .notDetermined:
-                    break
-                }
-            }
-        }
-        
+        // レコーディングをスタート
         try! startRecording()
+        // タイマーを再生
         startTimer()
     }
     
-    func startTimer() {
+    // MARK: - カウントダウンタイマー ------------------------------------------------------------
+    
+    private func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
 
-    func timeFormatted(_ totalSeconds: Int) -> String {
+    private func timeFormatted(_ totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
         //     let hours: Int = totalSeconds / 3600
@@ -83,12 +68,39 @@ class BattleViewController: UIViewController,SFSpeechRecognizerDelegate {
         }
     }
     
-    func endTimer() {
+    private func endTimer() {
         countdownTimer.invalidate()
     }
     
+    // MARK: - カウントダウンタイマー ここまで---------------------------------------------------
+}
+
+// スピーチ系
+// MARK: - SFSpeechRecognizerDelegate
+extension BattleViewController: SFSpeechRecognizerDelegate {
     
-    private func startRecording() throws {
+    fileprivate func requestSpeechAuthorization(){
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            /*
+             The callback may not be called on the main thread. Add an
+             operation to the main queue to update the record button's state.
+             */
+            OperationQueue.main.addOperation {
+                switch authStatus {
+                case .authorized:
+                    break
+                case .denied:
+                    break
+                case .restricted:
+                    break
+                case .notDetermined:
+                    break
+                }
+            }
+        }
+    }
+    
+    fileprivate func startRecording() throws {
         
         // Cancel the previous task if it's running.
         if let recognitionTask = recognitionTask {
@@ -122,17 +134,13 @@ class BattleViewController: UIViewController,SFSpeechRecognizerDelegate {
                 print("besttranscription:\(result.bestTranscription)")
                 print("formatedStr:\(result.bestTranscription.formattedString)")
                 
-                
                 let list = result.bestTranscription.segments.flatMap{$0}
                 let list01 = result.transcriptions.flatMap{$0}
                 
-                
-                for item in list{
+                for item in list {
                     print("01:\(item)")
                     item.substring
                     print("01-1:\(item.alternativeSubstrings)")
-                    
-                    
                 }
                 
                 for item in list01{
@@ -156,12 +164,10 @@ class BattleViewController: UIViewController,SFSpeechRecognizerDelegate {
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             self.recognitionRequest?.append(buffer)
-            
         }
         
         audioEngine.prepare()
         
         try audioEngine.start()
-        
     }
 }
