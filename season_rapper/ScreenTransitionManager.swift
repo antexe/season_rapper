@@ -64,4 +64,10 @@ class ScreenTransitionManager {
         show(controller)
     }
     
+    func goToSpeech(){
+        let storyboard = UIStoryboard(name: "Speech", bundle: nil)
+        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        showTranslucenceView(controller)
+    }
+    
 }

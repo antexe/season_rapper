@@ -20,6 +20,8 @@
 		28290F271EE2B19800BDBCB7 /* ScreenTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F261EE2B19800BDBCB7 /* ScreenTransitionManager.swift */; };
 		28290F291EE2B5B000BDBCB7 /* Theme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28290F281EE2B5B000BDBCB7 /* Theme.storyboard */; };
 		28290F2B1EE2B5C900BDBCB7 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */; };
+		391B0AC21EE2CEB300E9884C /* Speech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391B0AC11EE2CEB300E9884C /* Speech.storyboard */; };
+		391B0AC41EE2F7A800E9884C /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B0AC31EE2F7A800E9884C /* SpeechViewController.swift */; };
 		D35E2F682A5AF822A3917384 /* Pods_season_rapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BFF0EE822AA3A3F87BF53C /* Pods_season_rapper.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		28290F261EE2B19800BDBCB7 /* ScreenTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenTransitionManager.swift; sourceTree = "<group>"; };
 		28290F281EE2B5B000BDBCB7 /* Theme.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Theme.storyboard; sourceTree = "<group>"; };
 		28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		391B0AC11EE2CEB300E9884C /* Speech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speech.storyboard; sourceTree = "<group>"; };
+		391B0AC31EE2F7A800E9884C /* SpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		568082A83DB256987A63766C /* Pods-season_rapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season_rapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-season_rapper/Pods-season_rapper.debug.xcconfig"; sourceTree = "<group>"; };
 		C9BFF0EE822AA3A3F87BF53C /* Pods_season_rapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_season_rapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +98,7 @@
 			children = (
 				28290F1F1EE29B0A00BDBCB7 /* TopViewController.swift */,
 				28290F241EE2B17600BDBCB7 /* BattleViewController.swift */,
+				391B0AC31EE2F7A800E9884C /* SpeechViewController.swift */,
 				28290F2A1EE2B5C900BDBCB7 /* ThemeViewController.swift */,
 			);
 			name = ViewController;
@@ -115,6 +120,7 @@
 				28290F0F1EE2976700BDBCB7 /* Main.storyboard */,
 				28290F221EE2AFA000BDBCB7 /* Battle.storyboard */,
 				28290F281EE2B5B000BDBCB7 /* Theme.storyboard */,
+				391B0AC11EE2CEB300E9884C /* Speech.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				28205B381EE3032A00DDCC34 /* battle.mp3 in Resources */,
 				28290F291EE2B5B000BDBCB7 /* Theme.storyboard in Resources */,
 				28290F231EE2AFA000BDBCB7 /* Battle.storyboard in Resources */,
+				391B0AC21EE2CEB300E9884C /* Speech.storyboard in Resources */,
 				28290F161EE2976700BDBCB7 /* LaunchScreen.storyboard in Resources */,
 				28205B361EE3031F00DDCC34 /* op.mp3 in Resources */,
 				28290F131EE2976700BDBCB7 /* Assets.xcassets in Resources */,
@@ -268,6 +275,7 @@
 				28290F251EE2B17600BDBCB7 /* BattleViewController.swift in Sources */,
 				28290F201EE29B0A00BDBCB7 /* TopViewController.swift in Sources */,
 				28290F271EE2B19800BDBCB7 /* ScreenTransitionManager.swift in Sources */,
+				391B0AC41EE2F7A800E9884C /* SpeechViewController.swift in Sources */,
 				28290F0C1EE2976700BDBCB7 /* AppDelegate.swift in Sources */,
 				28205B3A1EE3072600DDCC34 /* AudioPlayer.swift in Sources */,
 			);

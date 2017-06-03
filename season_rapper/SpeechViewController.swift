@@ -1,32 +1,44 @@
 //
-//  BattleViewController.swift
+//  SpeechViewController.swift
 //  season_rapper
 //
-//  Created by 藤川慶 on 2017/06/03.
+//  Created by shoichiyamazaki on 2017/06/03.
 //  Copyright © 2017年 藤川慶. All rights reserved.
 //
 
 import UIKit
 import Speech
 
-class BattleViewController: UIViewController {
-    
-    @IBOutlet weak var inputLabel: UILabel!
+class SpeechViewController: UIViewController {
+
     @IBOutlet weak var timerLabel: UILabel!
-    
+    @IBOutlet weak var inputTextView: UITextView!
+    @IBOutlet weak var micImageView: UIImageView!
+    @IBOutlet weak var chekiLabel: UILabel!
+    var countdownTimer:Timer!
+    var totalTime = 60
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
     let audioEngine = AVAudioEngine()
     
-    var countdownTimer:Timer!
-    var totalTime = 60
+    @IBOutlet weak var circleView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        //BGM再生
-        AudioPlayer.shared.playMusic(.battle)
+        
+        let blurEffect = UIBlurEffect(style: .dark)
+        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        visualEffectView.alpha = 1
+        
+        // エフェクトビューのサイズを指定（オリジナル画像と同じサイズにする）
+        visualEffectView.frame = self.view.frame
+        self.view.insertSubview(visualEffectView, at: 0)
+        
+        // Do any additional setup after loading the view.
         
         // カウントダウンタイマー
         timerLabel.text = "\(timeFormatted(totalTime))"
@@ -41,21 +53,16 @@ class BattleViewController: UIViewController {
         try! startRecording()
         // タイマーを再生
         startTimer()
-        
-        
-        ScreenTransitionManager.shared.goToSpeech()
+        UIView.animate(withDuration: 1) { 
+            self.chekiLabel.transform = CGAffineTransform(translationX: 0, y: -10)
+            self.chekiLabel.alpha = 1
+        }
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        AudioPlayer.shared.stop()
-    }
-    
-    // MARK: - カウントダウンタイマー ------------------------------------------------------------
     
     private func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
-
+    
     private func timeFormatted(_ totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
@@ -81,13 +88,26 @@ class BattleViewController: UIViewController {
     private func endTimer() {
         countdownTimer.invalidate()
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
-    // MARK: - カウントダウンタイマー ここまで---------------------------------------------------
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
 
-// スピーチ系
-// MARK: - SFSpeechRecognizerDelegate
-extension BattleViewController: SFSpeechRecognizerDelegate {
+extension SpeechViewController: SFSpeechRecognizerDelegate {
     
     fileprivate func requestSpeechAuthorization(){
         SFSpeechRecognizer.requestAuthorization { authStatus in
@@ -158,7 +178,19 @@ extension BattleViewController: SFSpeechRecognizerDelegate {
                     print("02-1:\(item.formattedString)")
                 }
                 
-                self.inputLabel.text = result.bestTranscription.formattedString
+                self.inputTextView.text = result.bestTranscription.formattedString
+                
+                //しゃべると輪が広がる
+                UIView.animate(withDuration: 5, delay: 0, options: [.curveLinear], animations: { 
+                    self.circleView.transform = CGAffineTransform.init(scaleX: 10, y: 10)
+                    self.circleView.alpha = 1
+                }, completion: { (Bool) in
+                    self.circleView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                    self.circleView.alpha = 0
+                })
+                
+                
+                
                 isFinal = result.isFinal
             }
             
