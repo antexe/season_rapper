@@ -46,7 +46,7 @@ class ScreenTransitionManager {
     // トップに飛ぶ
     func goToTop(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        let controller = storyboard.instantiateViewController(withIdentifier: "TopViewController")
         show(controller)
     }
     
