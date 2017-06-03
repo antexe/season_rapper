@@ -13,12 +13,12 @@
         <scene sceneID="ezg-LU-W4G">
             <objects>
                 <navigationController id="gZM-sC-2rz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" misplaced="YES" id="Ot2-bD-m2P">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="Ot2-bD-m2P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TpR-GV-f5y"/>
+                        <segue destination="pww-zI-wHZ" kind="relationship" relationship="rootViewController" id="0W6-2B-vgv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykc-FD-pbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,7 +28,7 @@
         <!--Top View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="season_rapper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopViewController" id="BYZ-38-t0r" customClass="TopViewController" customModule="season_rapper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -85,7 +85,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="88.799999999999997" y="13.943028485757123"/>
+            <point key="canvasLocation" x="770" y="14"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="RtR-QC-Hs6">
+            <objects>
+                <viewController id="pww-zI-wHZ" customClass="SplashViewController" customModule="season_rapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="chI-OR-PoK"/>
+                        <viewControllerLayoutGuide type="bottom" id="RoY-lp-HKb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sN8-TW-pJH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuA-HZ-vzE" customClass="AVPlayerView" customModule="season_rapper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FuA-HZ-vzE" firstAttribute="leading" secondItem="sN8-TW-pJH" secondAttribute="leading" id="NlP-2K-I4k"/>
+                            <constraint firstAttribute="trailing" secondItem="FuA-HZ-vzE" secondAttribute="trailing" id="Sd2-w2-7Js"/>
+                            <constraint firstItem="RoY-lp-HKb" firstAttribute="top" secondItem="FuA-HZ-vzE" secondAttribute="bottom" id="WUQ-YK-nv7"/>
+                            <constraint firstItem="FuA-HZ-vzE" firstAttribute="top" secondItem="sN8-TW-pJH" secondAttribute="top" id="qHH-dN-iVF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5nk-sx-aq8"/>
+                    <connections>
+                        <outlet property="movieView" destination="FuA-HZ-vzE" id="a0b-D2-Fen"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddx-Ed-JxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="13.943028485757123"/>
         </scene>
     </scenes>
     <resources>

@@ -24,14 +24,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_op" translatesAutoresizingMaskIntoConstraints="NO" id="NGz-n5-ROc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="EuX-aQ-x7k">
-                                <rect key="frame" x="67.5" y="268.5" width="240" height="130"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EuX-aQ-x7k" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Bkn-mo-wdM"/>
-                            <constraint firstItem="EuX-aQ-x7k" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HuJ-oW-2kD"/>
                             <constraint firstAttribute="trailing" secondItem="NGz-n5-ROc" secondAttribute="trailing" id="Otc-D8-MI7"/>
                             <constraint firstItem="NGz-n5-ROc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="bCe-Cv-MFL"/>
                             <constraint firstItem="NGz-n5-ROc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hlg-7e-i3d"/>
@@ -47,6 +42,5 @@
     </scenes>
     <resources>
         <image name="background_op" width="375" height="667"/>
-        <image name="logo" width="240" height="130"/>
     </resources>
 </document>

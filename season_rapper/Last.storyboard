@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AFo-Am-Fh8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Last View Controller-->
+        <scene sceneID="o9I-ot-O3G">
+            <objects>
+                <viewController id="AFo-Am-Fh8" customClass="LastViewController" customModule="season_rapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Esb-K9-NzD"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZE3-mF-nrT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TvM-jX-NeT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_op" translatesAutoresizingMaskIntoConstraints="NO" id="Wxb-Go-jL9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSR-bn-Fk9">
+                                <rect key="frame" x="27" y="243" width="320" height="180"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz6-x8-lB7">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                        <state key="normal" image="playback"/>
+                                        <connections>
+                                            <action selector="playBackButtonTapped:" destination="AFo-Am-Fh8" eventType="touchUpInside" id="TVV-et-wDR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy4-7d-foD">
+                                        <rect key="frame" x="0.0" y="100" width="320" height="80"/>
+                                        <state key="normal" image="backtotop"/>
+                                        <connections>
+                                            <action selector="goToTopButtonTapped:" destination="AFo-Am-Fh8" eventType="touchUpInside" id="0At-y3-vQ7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Bz6-x8-lB7" secondAttribute="trailing" id="2X1-Rr-Hx2"/>
+                                    <constraint firstItem="Bz6-x8-lB7" firstAttribute="centerX" secondItem="YSR-bn-Fk9" secondAttribute="centerX" id="6zJ-4f-c0V"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vy4-7d-foD" secondAttribute="bottom" id="NM5-XH-5PZ"/>
+                                    <constraint firstItem="Bz6-x8-lB7" firstAttribute="top" secondItem="YSR-bn-Fk9" secondAttribute="top" id="S0w-S5-YGU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vy4-7d-foD" secondAttribute="trailing" id="WC7-n6-mLo"/>
+                                    <constraint firstItem="Bz6-x8-lB7" firstAttribute="leading" secondItem="YSR-bn-Fk9" secondAttribute="leading" id="X9V-ek-T7P"/>
+                                    <constraint firstItem="Vy4-7d-foD" firstAttribute="top" secondItem="Bz6-x8-lB7" secondAttribute="bottom" constant="20" id="nWD-MW-bIs"/>
+                                    <constraint firstItem="Vy4-7d-foD" firstAttribute="leading" secondItem="YSR-bn-Fk9" secondAttribute="leading" id="rHd-3K-jy4"/>
+                                    <constraint firstItem="Vy4-7d-foD" firstAttribute="centerX" secondItem="YSR-bn-Fk9" secondAttribute="centerX" id="ujP-83-Dnd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wxb-Go-jL9" secondAttribute="trailing" id="LBb-b5-TYF"/>
+                            <constraint firstItem="Wxb-Go-jL9" firstAttribute="top" secondItem="TvM-jX-NeT" secondAttribute="top" id="VAm-9r-kaa"/>
+                            <constraint firstItem="Wxb-Go-jL9" firstAttribute="leading" secondItem="TvM-jX-NeT" secondAttribute="leading" id="is7-fW-Rvu"/>
+                            <constraint firstItem="ZE3-mF-nrT" firstAttribute="top" secondItem="Wxb-Go-jL9" secondAttribute="bottom" id="k8g-qv-6Bs"/>
+                            <constraint firstItem="YSR-bn-Fk9" firstAttribute="centerX" secondItem="TvM-jX-NeT" secondAttribute="centerX" id="nkh-tp-dqA"/>
+                            <constraint firstItem="YSR-bn-Fk9" firstAttribute="centerY" secondItem="TvM-jX-NeT" secondAttribute="centerY" id="y1u-1H-xjP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzg-xx-AfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="159"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background_op" width="375" height="667"/>
+        <image name="backtotop" width="320" height="80"/>
+        <image name="playback" width="320" height="80"/>
+    </resources>
+</document>

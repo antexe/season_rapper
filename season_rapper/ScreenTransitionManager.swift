@@ -46,7 +46,7 @@ class ScreenTransitionManager {
     // トップに飛ぶ
     func goToTop(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        let controller = storyboard.instantiateViewController(withIdentifier: "TopViewController")
         show(controller)
     }
     
@@ -64,4 +64,24 @@ class ScreenTransitionManager {
         show(controller)
     }
     
+    // スピーチ画面に飛ぶ
+    func goToSpeech(){
+        let storyboard = UIStoryboard(name: "Speech", bundle: nil)
+        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        showTranslucenceView(controller)
+    }
+    
+    // 結果のViewControllerに飛ぶ
+    func goToResult(){
+        let storyboard = UIStoryboard(name: "Result", bundle: nil)
+        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        show(controller)
+    }
+    
+    // 最後のviewControllerに飛ぶ
+    func goToLast(){
+        let storyboard = UIStoryboard(name: "Last", bundle: nil)
+        guard let controller = storyboard.instantiateInitialViewController() else { return }
+        show(controller)
+    }
 }
