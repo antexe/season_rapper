@@ -146,6 +146,7 @@ extension SpeechViewController: SFSpeechRecognizerDelegate {
                     print("02-1:\(item.formattedString)")
                 }
                 self.inputTextView.text = result.bestTranscription.formattedString
+                
                 isFinal = result.isFinal
             }
             
