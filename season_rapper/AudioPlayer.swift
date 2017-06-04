@@ -51,25 +51,25 @@ class AudioPlayer: NSObject, AVAudioPlayerDelegate {
   
   
     func playTalk(_ message: String){
-        TtsgetAPI.ttsGet(username: "spajam2017", password: "RpM5m8BP", text: message, speakerName: "nozomi", ext: "wav", completion: {(response, err) in
-      
-        var audioError:NSError?
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            try AVAudioSession.sharedInstance().setActive(true)
-            self.audioPlayer2 = try AVAudioPlayer(data: response!)
-        } catch let error as NSError {
-            audioError = error
-            self.audioPlayer2 = nil
-        }
-        // エラーが起きたとき
-        if let error = audioError {
-            print("Error \(error.localizedDescription)")
-        }
-        self.audioPlayer2?.prepareToPlay()
-        self.audioPlayer2?.delegate = self
-        self.audioPlayer2?.play()
-      })
+        TtsgetAPI.ttsGet(username: "spajam2017", password: "RpM5m8BP", text: message, speakerName: "nozomi", ext: "wav", volume: "2.00", speed: nil, pitch: nil, range: nil, style: nil, completion: {(response, err) in
+            
+            var audioError:NSError?
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setActive(true)
+                self.audioPlayer2 = try AVAudioPlayer(data: response!)
+            } catch let error as NSError {
+                audioError = error
+                self.audioPlayer2 = nil
+            }
+            // エラーが起きたとき
+            if let error = audioError {
+                print("Error \(error.localizedDescription)")
+            }
+            self.audioPlayer2?.prepareToPlay()
+            self.audioPlayer2?.delegate = self
+            self.audioPlayer2?.play()
+        })
     }
   
     func stop(){

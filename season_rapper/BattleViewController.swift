@@ -58,8 +58,6 @@ class BattleViewController: UIViewController {
         
         // カウントダウンタイマー
         timerLabel.text = "\(timeFormatted(totalTime))"
-        // 音声マイクの許可を取る
-        requestSpeechAuthorization()
         
         // アイコンタップイベント(仮)
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(BattleViewController.aiTap(_:)))
@@ -81,8 +79,6 @@ class BattleViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        speechRecognizer.delegate = self
         
         // タイマーを再生
         startTimer()
@@ -162,32 +158,6 @@ class BattleViewController: UIViewController {
     }
     
     // MARK: - カウントダウンタイマー ここまで---------------------------------------------------
-}
-
-// スピーチ系
-// MARK: - SFSpeechRecognizerDelegate
-extension BattleViewController: SFSpeechRecognizerDelegate {
-    
-    fileprivate func requestSpeechAuthorization(){
-        SFSpeechRecognizer.requestAuthorization { authStatus in
-            /*
-             The callback may not be called on the main thread. Add an
-             operation to the main queue to update the record button's state.
-             */
-            OperationQueue.main.addOperation {
-                switch authStatus {
-                case .authorized:
-                    break
-                case .denied:
-                    break
-                case .restricted:
-                    break
-                case .notDetermined:
-                    break
-                }
-            }
-        }
-    }
 }
 
 extension BattleViewController {

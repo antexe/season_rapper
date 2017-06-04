@@ -20,6 +20,9 @@ class TopViewController: UIViewController {
         
         // BGM再生
         AudioPlayer.shared.playMusic(.op)
+        
+        // 音声マイクの許可を取る
+        requestSpeechAuthorization()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,5 +40,31 @@ class TopViewController: UIViewController {
         let userDefaults = UserDefaults.standard
         userDefaults.set(2, forKey: "playerCount")
         ScreenTransitionManager.shared.goToTheme()
+    }
+}
+
+// スピーチ系
+// MARK: - SFSpeechRecognizerDelegate
+extension TopViewController: SFSpeechRecognizerDelegate {
+    
+    fileprivate func requestSpeechAuthorization(){
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            /*
+             The callback may not be called on the main thread. Add an
+             operation to the main queue to update the record button's state.
+             */
+            OperationQueue.main.addOperation {
+                switch authStatus {
+                case .authorized:
+                    break
+                case .denied:
+                    break
+                case .restricted:
+                    break
+                case .notDetermined:
+                    break
+                }
+            }
+        }
     }
 }
