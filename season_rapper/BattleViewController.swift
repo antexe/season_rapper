@@ -20,6 +20,8 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var aiIcon: UIImageView!
     @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var dotringImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -55,6 +57,8 @@ class BattleViewController: UIViewController {
         imgView02.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
         self.view.addSubview(imgView01)
         self.view.addSubview(imgView02)
+        
+        self.nameLabel.text = "Itchy"
         
         // カウントダウンタイマー
         timerLabel.text = "\(timeFormatted(totalTime))"
@@ -105,7 +109,7 @@ class BattleViewController: UIViewController {
             ScreenTransitionManager.shared.goToCPVoice()
         }
     }
-    
+    var flag:Bool = false
     func cpEndNotified(_ notification: Notification){
         //BGM再生
         AudioPlayer.shared.playMusic(.battle)
@@ -138,11 +142,7 @@ class BattleViewController: UIViewController {
         if totalTime != 0 {
             totalTime -= 1
             
-            //if totalTime%10 == 0{
-            //    self.transition()
-            //    self.transition02()
-            //    i += 1
-            //}
+            
             
             if totalTime < 10{
                 timerLabel.textColor = UIColor.red
@@ -198,9 +198,13 @@ extension BattleViewController{
         UIView.animate(withDuration: 1) {
             switch self.i%2 == 0{
             case true:
-                self.imgView01.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-            case false:
                 self.imgView01.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
+                self.nameLabel.alpha = 0
+            case false:
+                self.imgView01.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                self.nameLabel.alpha = 0
+                self.nameLabel.text = "Itchy"
+                self.nameLabel.alpha = 1
             }
             
         }
@@ -232,8 +236,11 @@ extension BattleViewController{
         switch self.i%2 == 0{
             case true:
             self.imgView02.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            self.nameLabel.text = "AIかんな"
+            self.nameLabel.alpha = 1
             case false:
             self.imgView02.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
+            
         }
         }
     }

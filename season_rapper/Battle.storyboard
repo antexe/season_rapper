@@ -45,11 +45,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6Y-Rr-nF0">
+                                <rect key="frame" x="138.5" y="308.5" width="99" height="50.5"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="42"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="y41-le-YGj" firstAttribute="centerY" secondItem="CWT-Go-B4F" secondAttribute="centerY" id="0mm-lp-bkZ"/>
                             <constraint firstItem="0da-ON-1YD" firstAttribute="centerX" secondItem="CWT-Go-B4F" secondAttribute="centerX" id="40c-tk-1SF"/>
+                            <constraint firstItem="d6Y-Rr-nF0" firstAttribute="centerY" secondItem="CWT-Go-B4F" secondAttribute="centerY" id="4Kz-fm-9ta"/>
                             <constraint firstItem="mza-1t-Pu5" firstAttribute="centerX" secondItem="CWT-Go-B4F" secondAttribute="centerX" id="8L9-1I-2Nx"/>
                             <constraint firstItem="DLp-0b-EG2" firstAttribute="top" secondItem="mza-1t-Pu5" secondAttribute="bottom" constant="26" id="FXD-Wb-gOh"/>
                             <constraint firstItem="Jgu-PM-1X4" firstAttribute="centerX" secondItem="CWT-Go-B4F" secondAttribute="centerX" id="HHA-Zq-19y"/>
@@ -57,6 +64,7 @@
                             <constraint firstItem="pBU-FK-6Gd" firstAttribute="centerX" secondItem="CWT-Go-B4F" secondAttribute="centerX" id="Mox-30-Dzc"/>
                             <constraint firstAttribute="bottom" secondItem="oZA-xn-oqK" secondAttribute="bottom" id="Tkh-qx-hN0"/>
                             <constraint firstItem="oZA-xn-oqK" firstAttribute="top" secondItem="CWT-Go-B4F" secondAttribute="top" id="bL8-1i-1eL"/>
+                            <constraint firstItem="d6Y-Rr-nF0" firstAttribute="centerX" secondItem="CWT-Go-B4F" secondAttribute="centerX" id="c9Z-0r-VBT"/>
                             <constraint firstItem="y41-le-YGj" firstAttribute="centerX" secondItem="CWT-Go-B4F" secondAttribute="centerX" id="cXM-06-gc2"/>
                             <constraint firstItem="oZA-xn-oqK" firstAttribute="leading" secondItem="CWT-Go-B4F" secondAttribute="leading" id="gol-bB-oH3"/>
                             <constraint firstAttribute="trailing" secondItem="oZA-xn-oqK" secondAttribute="trailing" id="p8B-M7-qvx"/>
@@ -65,6 +73,7 @@
                     </view>
                     <connections>
                         <outlet property="dotringImageView" destination="y41-le-YGj" id="QV8-8U-gpG"/>
+                        <outlet property="nameLabel" destination="d6Y-Rr-nF0" id="vLn-Z3-gcX"/>
                         <outlet property="timerLabel" destination="mza-1t-Pu5" id="n41-RD-88Z"/>
                     </connections>
                 </viewController>
