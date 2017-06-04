@@ -16,7 +16,7 @@ class CPVoiceViewController: UIViewController {
     var countdownTimer:Timer!
     var totalTime = 10
     
-    var aiText = "俺は東京生まれヒップホップ育ち、悪そうな奴は大体友達悪そうな奴と大体同じ、裏の道歩き見てきたこの街"
+    var aiText = LyricList.second.rawValue
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +71,12 @@ class CPVoiceViewController: UIViewController {
     
     private func endTimer() {
         countdownTimer.invalidate()
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.dismiss(animated: true, completion: nil)
+            
+            // バトルに通知
+            NotificationCenter.default
+                .post(name: NSNotification.Name(rawValue: Const.cpEndNotified.rawValue), object: nil, userInfo: nil)
         }
     }
 // -------タイマーここまで -----------------------------------------------

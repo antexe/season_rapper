@@ -9,6 +9,11 @@
 import UIKit
 import Speech
 
+enum Const: String {
+    case userEndNotified = "userEndNotified"
+    case cpEndNotified = "cpEndNotified"
+}
+
 class BattleViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -30,14 +35,12 @@ class BattleViewController: UIViewController {
     var imgView02:UIImageView!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let img01 = UIImage(named: "user")
-        let img02 = UIImage(named: "AI")
-        
-        
+        // ユーザー画像の追加
+        let img01 = #imageLiteral(resourceName: "user")
+        let img02 = #imageLiteral(resourceName: "AI")
         let imgViewWidth:CGFloat = 100
         imgView01 = UIImageView(frame: CGRect(x: (self.view.frame.width - imgViewWidth)/2, y: self.view.frame.height/2 + dotringImageView.frame.height/2 - imgViewWidth/2, width: imgViewWidth, height: imgViewWidth))
         imgView01.backgroundColor = UIColor.white
@@ -49,14 +52,9 @@ class BattleViewController: UIViewController {
         imgView02.layer.cornerRadius = imgView02.frame.width/2
         imgView01.image = img01
         imgView02.image = img02
-        
         imgView02.transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)
-        
-        
         self.view.addSubview(imgView01)
         self.view.addSubview(imgView02)
-        //BGM再生
-        AudioPlayer.shared.playMusic(.battle)
         
         // カウントダウンタイマー
         timerLabel.text = "\(timeFormatted(totalTime))"
@@ -66,22 +64,63 @@ class BattleViewController: UIViewController {
         // アイコンタップイベント(仮)
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(BattleViewController.aiTap(_:)))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(BattleViewController.userTap(_:)))
-//        aiIcon.addGestureRecognizer(tap1)
-//        userIcon.addGestureRecognizer(tap2)
-        
         imgView01.addGestureRecognizer(tap2)
         imgView02.addGestureRecognizer(tap1)
+        
+        // 通知
+        NotificationCenter.default.addObserver(self, selector: #selector(BattleViewController.userEndNotified(_:)), name: NSNotification.Name(rawValue: Const.userEndNotified.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(BattleViewController.cpEndNotified(_:)), name: NSNotification.Name(rawValue: Const.cpEndNotified.rawValue), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //BGM再生
+        AudioPlayer.shared.playMusic(.battle)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         speechRecognizer.delegate = self
         
         // タイマーを再生
         startTimer()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            ScreenTransitionManager.shared.goToSpeech()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         AudioPlayer.shared.stop()
+    }
+    
+    func userEndNotified(_ notification: Notification){
+        //BGM再生
+        AudioPlayer.shared.playMusic(.battle)
+        
+        transition()
+        transition02()
+        i += 1
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            ScreenTransitionManager.shared.goToCPVoice()
+        }
+    }
+    
+    func cpEndNotified(_ notification: Notification){
+        //BGM再生
+        AudioPlayer.shared.playMusic(.battle)
+        
+        transition()
+        transition02()
+        i += 1
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            ScreenTransitionManager.shared.goToResult()
+        }
     }
     
     // MARK: - カウントダウンタイマー ------------------------------------------------------------
@@ -103,11 +142,11 @@ class BattleViewController: UIViewController {
         if totalTime != 0 {
             totalTime -= 1
             
-//            if totalTime%10 == 0{
-//                self.transition()
-//                self.transition02()
-//                i += 1
-//            }
+            //if totalTime%10 == 0{
+            //    self.transition()
+            //    self.transition02()
+            //    i += 1
+            //}
             
             if totalTime < 10{
                 timerLabel.textColor = UIColor.red
@@ -174,8 +213,6 @@ extension BattleViewController{
         let circlePath = UIBezierPath(arcCenter: CGPoint(x:circleOriginalPoint.x,y:circleOriginalPoint.y), radius: circleRadius, startAngle: startAngle, endAngle:endAngle, clockwise: true)
         var circlePosition01:CGPoint = CGPoint(x: imgView01.center.x, y: imgView01.center.y)
         
-        
-        
         CATransaction.begin()
         CATransaction.setCompletionBlock {
             self.imgView01.layer.position = circlePosition01
@@ -186,8 +223,6 @@ extension BattleViewController{
         animation01.path = circlePath.cgPath
         circlePosition01 = animation01.path!.currentPoint
         CATransaction.commit()
-        
-        
         
         self.imgView01.layer.add(animation01, forKey: nil)
         UIView.animate(withDuration: 1) {

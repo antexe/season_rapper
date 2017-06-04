@@ -15,7 +15,8 @@ class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     static let shared = AudioPlayer()
     private override init(){
     }
-    var audioPlayer:AVAudioPlayer?
+    var audioPlayer: AVAudioPlayer?
+    var audioPlayer2: AVAudioPlayer?
     
     enum MusicName: String {
         case op
@@ -56,23 +57,24 @@ class AudioPlayer: NSObject, AVAudioPlayerDelegate {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
-            self.audioPlayer = try AVAudioPlayer(data: response!)
+            self.audioPlayer2 = try AVAudioPlayer(data: response!)
         } catch let error as NSError {
             audioError = error
-            self.audioPlayer = nil
+            self.audioPlayer2 = nil
         }
         // エラーが起きたとき
         if let error = audioError {
             print("Error \(error.localizedDescription)")
         }
-        self.audioPlayer?.prepareToPlay()
-        self.audioPlayer?.delegate = self
-        self.audioPlayer?.play()
+        self.audioPlayer2?.prepareToPlay()
+        self.audioPlayer2?.delegate = self
+        self.audioPlayer2?.play()
       })
     }
   
     func stop(){
         audioPlayer?.stop()
+        audioPlayer2?.stop()
     }
 
 }

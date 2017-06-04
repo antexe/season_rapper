@@ -82,8 +82,11 @@ class SpeechViewController: UIViewController {
     
     private func endTimer() {
         countdownTimer.invalidate()
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) { 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.dismiss(animated: true, completion: nil)
+            // バトルに通知
+            NotificationCenter.default
+                .post(name: NSNotification.Name(rawValue: Const.userEndNotified.rawValue), object: nil, userInfo: nil)
         }
     }
 
